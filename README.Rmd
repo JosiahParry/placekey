@@ -18,7 +18,47 @@ knitr::opts_chunk$set(
 # placekey
 
 An R package to create [Placekeys](https://www.placekey.io/). 
-Interacts with Uber's H3 and the placekey API
+Interacts with Uber's H3 and the placekey API. Requires an installation of h3r. Is also dependent upon my fork of the `h3r` package. 
+
+This package does not support querying latitude and longitude to the placekey API. The same functionality is provided by the `coord_to_placekey()` function.
+
+```terminal
+brew install h3
+```
+
+```r
+devtools("josiahparry/h3r")
+devtools("josiahparry/placekey")
+```
+
+
+```{r}
+library(placekey)
+
+(x <- coord_to_placekey(10,10))
+
+placekey_to_h3(x)
+
+h3_to_placekey(placekey_to_h3(x))
+
+pk <- get_placekey(
+  street_address = "1543 Mission Street, Floor 3",
+  city = "San Francisco",
+  region  ="CA",
+  postal_code = 94105,
+  iso_country_code = "US"
+  )
+
+pk
+```
+
+
+
+- to do: 
+  - create a `is_placekey()` function
+  - get_placekey() s3 methods
+  - move h3r fork into this package
+
 
 - This relies on my fork of Scott Jackson's `h3r` package (https://github.com/josiahparry/h3r). 
   - h3r and [h3](https://github.com/crazycapivara/h3-r) do not return raw `H3` value. 
@@ -26,11 +66,3 @@ Interacts with Uber's H3 and the placekey API
 -
 
 - I notice that https://github.com/uber/h3-py/tree/master/src/h3 includes the entirey of the c library in the src file. this r package requires h3 to be installed on your own.
-
-```terminal
-brew install h3
-```
-
-```r
-devtools("josiahparry/placekey")
-```

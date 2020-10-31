@@ -1,6 +1,8 @@
 #' Convert a place to h3 index
 #'
-#' @param placekey
+#' @param placekey A placekey.
+#' @importFrom magrittr %>%
+#' @importFrom purrr map_chr
 #' @export
 placekey_to_h3 <- function(placekey) {
 

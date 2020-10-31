@@ -6,6 +6,9 @@
 \usage{
 placekey_to_h3(placekey)
 }
+\arguments{
+\item{placekey}{A placekey.}
+}
 \description{
 Convert a place to h3 index
 }
