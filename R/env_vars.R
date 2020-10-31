@@ -36,3 +36,6 @@ TUPLE_REGEX = paste0('[', ALPHABET, REPLACEMENT_CHARS, ']{3}')
 # WHERE_REGEX = re.compile(
 #   '^' + '-'.join([FIRST_TUPLE_REGEX, TUPLE_REGEX, TUPLE_REGEX]) + '$')
 # WHAT_REGEX = re.compile('^[' + ALPHABET + ']{3}(-[' + ALPHABET + ']{3})?$')
+
+# Taking the calculated value from python.
+HEADER_INT <- 621496748577128448

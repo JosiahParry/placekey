@@ -1,14 +1,11 @@
-#' Generate Placekey from a coordinate
+#' Convert h3 string to placekey
 #'
-#' @param lat Latitude in decimal degrees.
-#' @param lon Longitude in decimal degrees.
+#' Given an h3 string identify the where portion of a placekey.
+#'
 #' @export
-#' @examples
-#' coord_to_placekey(29.76328, -95.36327)
-#' #> "@675-9z6-5nw-m2"
-coord_to_placekey <- function(lat, long) {
-  h3_integer <- h3r::getCIndexFromCoords(lat, long, res = RESOLUTION)
+h3_to_placekey <- function(h3_string) {
 
+  h3_integer <- h3r::h3_string_to_int(h3_string)
   short_h3_int <- shorten_h3_integer(h3_integer)
 
   encoded_short_int <- encode_short_int(short_h3_int)
@@ -23,5 +20,4 @@ coord_to_placekey <- function(lat, long) {
                                     .f = ~substr(cleaned_encoded, .x, .y))
 
   paste0("@", paste0(encoded_splits, collapse = "-"))
-
 }
