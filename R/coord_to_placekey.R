@@ -7,7 +7,7 @@
 #' coord_to_placekey(29.76328, -95.36327)
 #' #> "@675-9z6-5nw-m2"
 coord_to_placekey <- function(lat, long) {
-  h3_integer <- h3r::getCIndexFromCoords(lat, long, res = RESOLUTION)
+  h3_integer <- coord_to_h3_int(lat, long, res = RESOLUTION)
 
   short_h3_int <- shorten_h3_integer(h3_integer)
 

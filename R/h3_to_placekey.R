@@ -5,7 +5,7 @@
 #' @export
 h3_to_placekey <- function(h3_string) {
 
-  h3_integer <- h3r::h3_string_to_int(h3_string)
+  h3_integer <- h3_string_to_int(h3_string)
   short_h3_int <- shorten_h3_integer(h3_integer)
 
   encoded_short_int <- encode_short_int(short_h3_int)

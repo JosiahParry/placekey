@@ -1,4 +1,5 @@
 # Environment variables
+# these are copied from the python library
 RESOLUTION = 10
 BASE_RESOLUTION = 12
 ALPHABET = tolower('23456789BCDFGHJKMNPQRSTVWXYZ')
@@ -23,19 +24,15 @@ REPLACEMENT_MAP = c(
   "bch" = "bce"
 )
 
-# HEADER_BITS = bin(h3_int.geo_to_h3(0.0, 0.0, resolution=RESOLUTION))[2:].zfill(64)[:12]
-# gets h3 int from coord 00 w resolution RESOLUTION
-# converts to binary
-# Will work on this when i need it
-#origin <- h3r::getCIndexFromCoords(0, 0, res = RESOLUTION)
+
+# extracted the regex from the python library
+WHERE_REGEX <- '^[23456789bcdfghjkmnpqrstvwxyzeua]{3}-[23456789bcdfghjkmnpqrstvwxyzeu]{3}-[23456789bcdfghjkmnpqrstvwxyzeu]{3}$'
+WHAT_REGEX <- '^[23456789bcdfghjkmnpqrstvwxyz]{3}(-[23456789bcdfghjkmnpqrstvwxyz]{3})?$'
 
 BASE_CELL_SHIFT = 2 ^ (3 * 15)    # Adding this will increment the base cell value by 1
 UNUSED_RESOLUTION_FILLER = 2 ^ (3 * (15 - BASE_RESOLUTION)) - 1
 FIRST_TUPLE_REGEX = paste0('[', ALPHABET, REPLACEMENT_CHARS, PADDING_CHAR , ']{3}')
 TUPLE_REGEX = paste0('[', ALPHABET, REPLACEMENT_CHARS, ']{3}')
-# WHERE_REGEX = re.compile(
-#   '^' + '-'.join([FIRST_TUPLE_REGEX, TUPLE_REGEX, TUPLE_REGEX]) + '$')
-# WHAT_REGEX = re.compile('^[' + ALPHABET + ']{3}(-[' + ALPHABET + ']{3})?$')
 
 # Taking the calculated value from python.
 HEADER_INT <- 621496748577128448
