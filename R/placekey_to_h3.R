@@ -32,7 +32,7 @@ placekey_to_h3 <- function(placekey) {
   # convert from h3 integer to string
 
   # for some reason i have to subtract 100 because it's off by that much
-  h3r::h3_int_to_string(unshortened_h3-100)
+  h3_int_to_string(unshortened_h3-100)
 
 }
 #
