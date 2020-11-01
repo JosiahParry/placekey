@@ -2,6 +2,8 @@
 % Please edit documentation in R/get_placekey.R
 \name{get_placekey}
 \alias{get_placekey}
+\alias{get_placekey.data.frame}
+\alias{get_placekey.list}
 \title{Query the Placekey API}
 \usage{
 get_placekey(
@@ -15,7 +17,32 @@ get_placekey(
   strict_name_match = FALSE,
   key = Sys.getenv("PLACEKEY_SECRET")
 )
+
+\method{get_placekey}{data.frame}(.data, strict_name_match, strict_address_match)
+
+\method{get_placekey}{list}(.list, strict_name_match, strict_address_match)
+}
+\arguments{
+\item{location_name}{The name of the place.}
+
+\item{street_address}{The streed address of the place.}
+
+\item{city}{The city where the place is located.}
+
+\item{region}{The second-level administrative region below nation for the place. In the US, this is the state.}
+
+\item{postal_code}{The postal code for the place.}
+
+\item{iso_country_code}{The ISO 2-letter Country Code for the place. Currently may only be US.}
+
+\item{strict_address_match}{If set to `TRUE`, a Placekey is only returned if all fields identify the place as being at the exact address specified. If set to `FALSE`, the Placekey returned may ignore unit/apartment/floor information. Optional. Default `FALSE`.}
+
+\item{strict_name_match}{If set to `TRUE`, a Placekey is only returned if all fields identify the POI as having the exact name specified. Optional. Default `FALSE`.}
+
+\item{.data}{A dataframe containing the columns `street_address`, `city`, `region`, `postal_code`, and `iso_country_code`.}
+
+\item{.list}{A named list elements named `street_address`, `city`, `region`, `postal_code`, and `iso_country_code`.}
 }
 \description{
-Queries the Placekey API and, if successful, returns a placekey.
+Queries the Placekey API and, if successful, returns a placekey. See https://docs.placekey.io/ for more information.
 }

@@ -1,6 +1,6 @@
 #' Convert h3 string to placekey
 #'
-#' Given an h3 string identify the where portion of a placekey.
+#' Given an h3 string identify the _where_ portion of a placekey.
 #'
 #' @export
 h3_to_placekey <- function(h3_string) {

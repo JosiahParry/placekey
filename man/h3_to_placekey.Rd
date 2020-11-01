@@ -7,5 +7,5 @@
 h3_to_placekey(h3_string)
 }
 \description{
-Given an h3 string identify the where portion of a placekey.
+Given an h3 string identify the _where_ portion of a placekey.
 }
