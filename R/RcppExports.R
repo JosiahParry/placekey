@@ -5,6 +5,7 @@
 #' @param lat latitude in degrees
 #' @param lon longitude in degrees
 #' @param resolution resolution, higher is more granular
+#' @export
 coord_to_h3_int <- function(lat, lon, res) {
     .Call(`_placekey_coord_to_h3_int`, lat, lon, res)
 }
@@ -14,12 +15,14 @@ coord_to_h3_int <- function(lat, lon, res) {
 #' h3_string_to_int takes an h3 index represented as a hexadecimal string and returns the integer format.
 #'
 #' @param index h3 index as a hex representation character vector. See \code{\link{getIndexFromCoords}}
+#' @export
 h3_string_to_int <- function(index) {
     .Call(`_placekey_h3_string_to_int`, index)
 }
 
 #' h3_int_to_string takes an h3 integer representation and returns the string format.
 #' @param index as an integer representation.
+#' @export
 h3_int_to_string <- function(index) {
     .Call(`_placekey_h3_int_to_string`, index)
 }

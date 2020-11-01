@@ -102,7 +102,7 @@ get_placekey.data.frame <- function(.data, strict_name_match, strict_address_mat
     address_match <- FALSE
   }
   # create vector of names to check against
-  .data_names <- names(boston_bars)
+  .data_names <- names(.data)
 
   # create missing columns if needed.
   .data_filled <- .data %>%
@@ -134,7 +134,7 @@ get_placekey.list <- function(.list, strict_name_match, strict_address_match) {
 
   .data <- data.frame(.list, stringsAsFactors = FALSE)
 
-  get_placekey.data.frame(.data)
+  unclass(get_placekey.data.frame(.data))
 }
 
 
