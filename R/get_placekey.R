@@ -16,6 +16,7 @@
 #' @param iso_country_code The ISO 2-letter Country Code for the place. Currently may only be US.
 #' @param strict_address_match If set to `TRUE`, a Placekey is only returned if all fields identify the place as being at the exact address specified. If set to `FALSE`, the Placekey returned may ignore unit/apartment/floor information. Optional. Default `FALSE`.
 #' @param strict_name_match If set to `TRUE`, a Placekey is only returned if all fields identify the POI as having the exact name specified. Optional. Default `FALSE`.
+#' @param ... Unused; allows \code{purrr::pmap_chr} to call \code{get_placekey} with columns not used in the Placekey call.
 #' @importFrom httr add_headers POST content
 #' @importFrom purrr discard
 #' @importFrom magrittr %>%
