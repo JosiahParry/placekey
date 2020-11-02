@@ -26,7 +26,8 @@ get_placekey <- function(location_name = NULL, street_address = NULL,
                          iso_country_code = NULL,
                          strict_address_match = FALSE,
                          strict_name_match = FALSE,
-                         key = Sys.getenv("PLACEKEY_SECRET")) {
+                         key = Sys.getenv("PLACEKEY_SECRET"),
+                         ...) {
 
   UseMethod("get_placekey")
 
@@ -39,7 +40,8 @@ get_placekey.default <- function(location_name = NULL, street_address = NULL,
                          iso_country_code = NULL,
                          strict_address_match = FALSE,
                          strict_name_match = FALSE,
-                         key = Sys.getenv("PLACEKEY_SECRET")) {
+                         key = Sys.getenv("PLACEKEY_SECRET"),
+                          ...) {
 
 
   # cast postal_code to character just incase it is not.
