@@ -30,7 +30,7 @@ brew install h3
 Once H3 is installed, you can install placekey.
 
 ``` r
-devtools("josiahparry/placekey")
+devtools::install_github("josiahparry/placekey")
 ```
 
 ## Getting placekeys from an address
