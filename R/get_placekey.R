@@ -16,6 +16,7 @@
 #' @param iso_country_code The ISO 2-letter Country Code for the place. Currently may only be US.
 #' @param strict_address_match If set to `TRUE`, a Placekey is only returned if all fields identify the place as being at the exact address specified. If set to `FALSE`, the Placekey returned may ignore unit/apartment/floor information. Optional. Default `FALSE`.
 #' @param strict_name_match If set to `TRUE`, a Placekey is only returned if all fields identify the POI as having the exact name specified. Optional. Default `FALSE`.
+#' @param ... Unused; allows \code{purrr::pmap_chr} to call \code{get_placekey} with columns not used in the Placekey call.
 #' @importFrom httr add_headers POST content
 #' @importFrom purrr discard
 #' @importFrom magrittr %>%
@@ -26,7 +27,8 @@ get_placekey <- function(location_name = NULL, street_address = NULL,
                          iso_country_code = NULL,
                          strict_address_match = FALSE,
                          strict_name_match = FALSE,
-                         key = Sys.getenv("PLACEKEY_SECRET")) {
+                         key = Sys.getenv("PLACEKEY_SECRET"),
+                         ...) {
 
   UseMethod("get_placekey")
 
@@ -39,7 +41,8 @@ get_placekey.default <- function(location_name = NULL, street_address = NULL,
                          iso_country_code = NULL,
                          strict_address_match = FALSE,
                          strict_name_match = FALSE,
-                         key = Sys.getenv("PLACEKEY_SECRET")) {
+                         key = Sys.getenv("PLACEKEY_SECRET"),
+                          ...) {
 
 
   # cast postal_code to character just incase it is not.
