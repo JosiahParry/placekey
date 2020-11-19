@@ -2,7 +2,11 @@ Package: placekey
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: Who wrote it
+Authors@R: c(
+    person("Josiah", "Parry", role = c("aut","cre"), email = "josiah.parry@gmail.com"),
+    person(given = "Nick", family = "Huntington-Klein", role = "aut", 
+           email = "nhuntington-klein@seattleu.edu", 
+           comment = c(ORCID = "0000-0002-7352-3991")))
 Maintainer: Josiah Parry <josiah.parry@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
