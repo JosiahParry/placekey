@@ -1,16 +1,16 @@
 Package: placekey
 Type: Package
-Title: What the Package Does (Title Case)
+Title: An R Library for Placekeys
 Version: 0.1.0
 Authors@R: c(
-    person("Josiah", "Parry", role = c("aut","cre"), email = "josiah.parry@gmail.com"),
+    person("Josiah", "Parry", role = c("aut","cre"), email = "josiah.parry@gmail.com",
+            commen = c(ORCID = "0000-0001-9910-865X")),
     person(given = "Nick", family = "Huntington-Klein", role = "aut", 
            email = "nhuntington-klein@seattleu.edu", 
            comment = c(ORCID = "0000-0002-7352-3991")))
 Maintainer: Josiah Parry <josiah.parry@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Description: An R library to interact with plackeys. The package provides access to the placekey.io API, conversion between Uber's H3 index, and other general placekey actions. 
+License: Apache License (>= 2.0)
 Imports:
     stringr,
     magrittr,
