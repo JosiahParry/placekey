@@ -15,7 +15,8 @@ get_placekey(
   iso_country_code = NULL,
   strict_address_match = FALSE,
   strict_name_match = FALSE,
-  key = Sys.getenv("PLACEKEY_SECRET")
+  key = Sys.getenv("PLACEKEY_SECRET"),
+  ...
 )
 
 \method{get_placekey}{data.frame}(.data, strict_name_match, strict_address_match)
@@ -38,6 +39,8 @@ get_placekey(
 \item{strict_address_match}{If set to `TRUE`, a Placekey is only returned if all fields identify the place as being at the exact address specified. If set to `FALSE`, the Placekey returned may ignore unit/apartment/floor information. Optional. Default `FALSE`.}
 
 \item{strict_name_match}{If set to `TRUE`, a Placekey is only returned if all fields identify the POI as having the exact name specified. Optional. Default `FALSE`.}
+
+\item{...}{Unused; allows \code{purrr::pmap_chr} to call \code{get_placekey} with columns not used in the Placekey call.}
 
 \item{.data}{A dataframe containing the columns `street_address`, `city`, `region`, `postal_code`, and `iso_country_code`.}
 

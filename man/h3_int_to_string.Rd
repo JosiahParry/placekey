@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{h3_int_to_string}
 \alias{h3_int_to_string}
-\title{h3_int_to_string takes an h3 integer representation and returns the string format.}
+\title{Returns string format of an H3 integer representation.}
 \usage{
 h3_int_to_string(index)
 }
@@ -10,5 +10,5 @@ h3_int_to_string(index)
 \item{index}{as an integer representation.}
 }
 \description{
-h3_int_to_string takes an h3 integer representation and returns the string format.
+Returns string format of an H3 integer representation.
 }
