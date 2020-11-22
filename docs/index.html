@@ -77,18 +77,19 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="placekey" class="section level1">
+<div id="placekey-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#placekey" class="anchor"></a>placekey</h1></div>
+<a href="#placekey-" class="anchor"></a>placekey <img src="reference/figures/placekey-logo.svg" width="150px" align="right">
+</h1></div>
 <p>{placekey} is an R package to interact with the <a href="https://www.placekey.io/">Placekey</a> API.</p>
 <div id="installing" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installing" class="anchor"></a>Installing</h2>
-<p>Some functionality of placekey requires the utilizing of the C library <a href="https://h3geo.org/">H3</a> from Uber. Ensure that you have H3 installed prior to installing placekey. The instructions to install h3 can be found on the H3 <a href="https://github.com/uber/H3">GitHub repository</a>. If you are using macOS, I recommend installing from <a href="https://brew.sh/">Homebrew</a>.</p>
-<p>If you do not have homebrew installed, go to brew.sh and follow the installation instructions. Open up spotlight search and open up the terminal application. Run <code>brew --version</code> to see if you have Homebrew installed. If that command doesn’t return anything un <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"</code> to install Homebrew. Then use Homebrew to install H3.</p>
+<p>Some functionality of placekey requires the utilization of the C library <a href="https://h3geo.org/">H3</a> from Uber. Ensure that you have H3 installed prior to installing placekey. The instructions to install h3 can be found on the H3 <a href="https://github.com/uber/H3">GitHub repository</a>. If you are using macOS, I recommend installing from <a href="https://brew.sh/">Homebrew</a>.</p>
+<p>If you do not have homebrew installed, go to <a href="https://brew.sh">brew.sh</a> and follow the installation instructions. Open up spotlight search and open up the terminal application. Run <code>brew --version</code> to see if you have Homebrew installed. If that command doesn’t return anything un <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"</code> to install Homebrew. Then use Homebrew to install H3.</p>
 <pre class="terminal"><code>brew install h3</code></pre>
 <p>Once H3 is installed, you can install placekey.</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"josiahparry/placekey"</span>)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"josiahparry/placekey"</span>)</pre></div>
 </div>
 <div id="getting-placekeys-from-an-address" class="section level2">
 <h2 class="hasAnchor">

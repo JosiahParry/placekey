@@ -10,12 +10,12 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-",
+  fig.path = "man/figures/",
   out.width = "100%"
 )
 ```
 
-# placekey
+# placekey  <img src="man/figures/placekey-logo.svg" width = "150px" align="right" />
 
 {placekey} is an R package to interact with the [Placekey](https://www.placekey.io/) API. 
 
