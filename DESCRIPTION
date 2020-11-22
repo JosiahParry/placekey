@@ -7,7 +7,10 @@ Authors@R: c(
             commen = c(ORCID = "0000-0001-9910-865X")),
     person(given = "Nick", family = "Huntington-Klein", role = "aut", 
            email = "nhuntington-klein@seattleu.edu", 
-           comment = c(ORCID = "0000-0002-7352-3991")))
+           comment = c(ORCID = "0000-0002-7352-3991")),
+    person(given = c("Placekey.io"),
+    role = c("cph"))
+    )
 Maintainer: Josiah Parry <josiah.parry@gmail.com>
 Description: An R library to interact with plackeys. The package provides access to the placekey.io API, conversion between Uber's H3 index, and other general placekey actions. 
 License: Apache License (>= 2.0)
