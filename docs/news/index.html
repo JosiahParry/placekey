@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Query the Placekey API — get_placekey • placekey</title>
+<title>Changelog • placekey</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Query the Placekey API — get_placekey" />
-<meta property="og:description" content="Queries the Placekey API and, if successful, returns a placekey. See https://docs.placekey.io/ for more information." />
+<meta property="og:title" content="Changelog" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -69,7 +68,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -136,90 +135,25 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Query the Placekey API</h1>
-    <small class="dont-index">Source: <a href='https://github.com/josiahparry/placekey/blob/master/R/get_placekey.R'><code>R/get_placekey.R</code></a></small>
-    <div class="hidden name"><code>get_placekey.Rd</code></div>
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/josiahparry/placekey/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    <p>Queries the Placekey API and, if successful, returns a placekey. See https://docs.placekey.io/ for more information.</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>get_placekey</span>(
-  <span class='kw'>location_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>street_address</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>city</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>region</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>postal_code</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>iso_country_code</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>strict_address_match</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>strict_name_match</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>key</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"PLACEKEY_SECRET"</span>),
-  <span class='no'>...</span>
-)
-
-<span class='co'># S3 method for data.frame</span>
-<span class='fu'>get_placekey</span>(<span class='no'>.data</span>, <span class='no'>strict_name_match</span>, <span class='no'>strict_address_match</span>)
-
-<span class='co'># S3 method for list</span>
-<span class='fu'>get_placekey</span>(<span class='no'>.list</span>, <span class='no'>strict_name_match</span>, <span class='no'>strict_address_match</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>location_name</th>
-      <td><p>The name of the place.</p></td>
-    </tr>
-    <tr>
-      <th>street_address</th>
-      <td><p>The streed address of the place.</p></td>
-    </tr>
-    <tr>
-      <th>city</th>
-      <td><p>The city where the place is located.</p></td>
-    </tr>
-    <tr>
-      <th>region</th>
-      <td><p>The second-level administrative region below nation for the place. In the US, this is the state.</p></td>
-    </tr>
-    <tr>
-      <th>postal_code</th>
-      <td><p>The postal code for the place.</p></td>
-    </tr>
-    <tr>
-      <th>iso_country_code</th>
-      <td><p>The ISO 2-letter Country Code for the place. Currently may only be US.</p></td>
-    </tr>
-    <tr>
-      <th>strict_address_match</th>
-      <td><p>If set to `TRUE`, a Placekey is only returned if all fields identify the place as being at the exact address specified. If set to `FALSE`, the Placekey returned may ignore unit/apartment/floor information. Optional. Default `FALSE`.</p></td>
-    </tr>
-    <tr>
-      <th>strict_name_match</th>
-      <td><p>If set to `TRUE`, a Placekey is only returned if all fields identify the POI as having the exact name specified. Optional. Default `FALSE`.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Unused; allows <code><a href='https://purrr.tidyverse.org/reference/map2.html'>purrr::pmap_chr</a></code> to call <code>get_placekey</code> with columns not used in the Placekey call.</p></td>
-    </tr>
-    <tr>
-      <th>.data</th>
-      <td><p>A dataframe containing the columns `street_address`, `city`, `region`, `postal_code`, and `iso_country_code`.</p></td>
-    </tr>
-    <tr>
-      <th>.list</th>
-      <td><p>A named list elements named `street_address`, `city`, `region`, `postal_code`, and `iso_country_code`.</p></td>
-    </tr>
-    </table>
-
-
+    <div id="placekey-010" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.0">
+<a href="#placekey-010" class="anchor"></a>placekey 0.1.0</h1>
+<ul>
+<li>2020-11-22: <code><a href="../reference/get_placekey.html">get_placekey()</a></code> modified to only return placekeys as a character vector as opposed to adding them to the provided data.</li>
+</ul>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
 
 
