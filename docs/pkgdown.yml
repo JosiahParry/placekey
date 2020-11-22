@@ -1,0 +1,7 @@
+pandoc: 2.9.2.1
+pkgdown: 1.5.1
+pkgdown_sha: ~
+articles:
+  what-is-placekey: what-is-placekey.html
+last_built: 2020-11-21T23:19Z
+

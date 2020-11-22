@@ -1,0 +1,24 @@
+destination: docs
+template:
+  params:
+    bootswatch: lumen
+    ganalytics: UA-90934606-1
+reference:
+- title: The placekey.io API.
+  desc: >
+    Functions for interacting with the placekey.io API.
+- contents:
+  - placekey
+  - get_placekey
+
+- title: Interacting with H3.
+  desc: >
+    Functions which utilize H3.
+- contents:
+  - placekey_to_h3
+  - h3_to_placekey
+  - h3_int_to_string
+  - h3_string_to_int
+  - is_placekey
+  - coord_to_placekey
+  - coord_to_h3_int
