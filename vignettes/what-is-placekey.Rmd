@@ -8,13 +8,13 @@ output: html_document
 
 ### What is a placekey?
 
-Placekey is nothing more than a special unique identifier that is made specifically for places data---also referred to as POI data, short for places of interest. The main utility of placekey is to provide a common join field across different POI datasets. Placekey thereby solves the challenges faced when trying to join on addresses, or location name, or both, particularly when the format of fields can be so varied.
+Placekey is a special type of unique identifier that is made specifically for places data---also referred to as POI data, short for places of interest. The main utility of placekey is to provide a common join field across different POI datasets. Placekey thereby solves the challenges faced when trying to join on addresses, or location name, or both, particularly when the format of fields can be so varied.
 
 A placekey is composed of two parts referred to as the **what** and the **where** and takes the format of `what@where`. The **what** is optional meaning that a placekey may also look like `@where`. An example of a valid placekey is `227-222@62k-phc-qs5`. This is the unique identifier for Kings Dining & Entertainment Dedham, MA.
 
 ### How does it work?
 
-Placekey utilizes a custom encoding based [^1] on the 28 character alpabet `23456789bcdfghjkmnpqrstvwxyz`. Each portion of a placekey relies on separate infrastructure. The **what** part of a placekey is the secret formula that they keep hidden in the Krusty Krab. The **where** is not so secret.
+Placekey utilizes a custom encoding based [^1] on the 28 character alphabet `23456789bcdfghjkmnpqrstvwxyz`. Each portion of a placekey relies on separate infrastructure. The **what** part of a placekey is the secret formula that they keep hidden in the Krusty Krab. The **where** is not so secret.
 
 
 The **where** portion of a placekey is created by utilizing Uber's [H3](https://github.com/uber/h3) [^2] library. In brief, H3 is a library and, more generally, method of partitioning the globe into small sections. H3 partitions the globe into a number of hexagons. The hexagons have varying sizes, or resolutions, ranging from 0 to 15. An H3 index of resolution 0 covers over 4,000,000 square kilometers whereas an index of resolution 15 covers an area of 0.0000009	square kilometers[^h3-index].
@@ -39,7 +39,7 @@ kings <- tibble::tibble(
 
 (kings_pk <- get_placekey(kings))
 
-(pk_h3 <- placekey_to_h3(kings_pk$placekey))
+(pk_h3 <- placekey_to_h3(kings_pk))
 
 h3_to_placekey(pk_h3)
 

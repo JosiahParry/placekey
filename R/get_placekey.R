@@ -115,9 +115,9 @@ get_placekey.data.frame <- function(.data, strict_name_match, strict_address_mat
       strict_address_match = ifelse("strict_name_match" %in% .data_names, strict_address_match, address_match)
     )
 
-  .data_pks <- pmap_chr(.data_filled, get_placekey)
+  pmap_chr(.data_filled, get_placekey)
 
-  mutate(.data, placekey = .data_pks)
+
 
 }
 
@@ -137,7 +137,7 @@ get_placekey.list <- function(.list, strict_name_match, strict_address_match) {
 
   .data <- data.frame(.list, stringsAsFactors = FALSE)
 
-  unclass(get_placekey.data.frame(.data))
+  get_placekey.data.frame(.data)
 }
 
 
