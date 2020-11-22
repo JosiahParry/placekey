@@ -7,7 +7,7 @@
 #' @param resolution resolution, higher is more granular
 #' @export
 coord_to_h3_int <- function(lat, lon, res) {
-    .Call(`_placekey_coord_to_h3_int`, lat, lon, res)
+    .Call('_placekey_coord_to_h3_int', PACKAGE = 'placekey', lat, lon, res)
 }
 
 #' Convert an H3 index string to 64 bit integer
@@ -17,13 +17,13 @@ coord_to_h3_int <- function(lat, lon, res) {
 #' @param index h3 index as a hex representation character vector. See \code{\link{getIndexFromCoords}}
 #' @export
 h3_string_to_int <- function(index) {
-    .Call(`_placekey_h3_string_to_int`, index)
+    .Call('_placekey_h3_string_to_int', PACKAGE = 'placekey', index)
 }
 
-#' h3_int_to_string takes an h3 integer representation and returns the string format.
+#' Returns string format of an H3 integer representation.
 #' @param index as an integer representation.
 #' @export
 h3_int_to_string <- function(index) {
-    .Call(`_placekey_h3_int_to_string`, index)
+    .Call('_placekey_h3_int_to_string', PACKAGE = 'placekey', index)
 }
 
