@@ -23,3 +23,13 @@ reference:
   - is_placekey
   - coord_to_placekey
   - coord_to_h3_int
+
+# NAVBAR
+navbar:
+  structure:
+    left: [home, reference, articles]
+    right: [placekey, github]
+  components:
+    placekey:
+      text: "placekey.io"
+      href: https://placekey.io
