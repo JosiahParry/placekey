@@ -2,7 +2,8 @@ destination: docs
 template:
   params:
     bootswatch: lumen
-    ganalytics: UA-90934606-1
+home:
+  title: Placekey - R library
 reference:
 - title: The placekey.io API.
   desc: >

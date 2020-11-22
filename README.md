@@ -6,6 +6,10 @@
 {placekey} is an R package to interact with the
 [Placekey](https://www.placekey.io/) API.
 
+See the [Introduction to
+Placekeys](https://placekey.josiahparry.com/articles/what-is-placekey.html)
+vignette for more.
+
 ## Installing
 
 Some functionality of placekey requires the utilization of the C library
@@ -63,14 +67,8 @@ the placekey.
 
 ``` r
 get_placekey(placekey::boston_bars[2:5,])
-#> # A tibble: 4 x 7
-#>   location_name street_address city  region postal_code iso_country_code
-#>   <chr>         <chr>          <chr> <chr>  <chr>       <chr>           
-#> 1 Studio 3      670 Legacy Bo… Dedh… Massa… 02026       US              
-#> 2 Showcase Cin… 200 Elm Street Dedh… Massa… 02026       US              
-#> 3 Victory Gril… 233 Elm Street Dedh… Massa… 02026       US              
-#> 4 Aquitaine De… 500 Legacy Pl… Dedh… Massa… 02026       US              
-#> # … with 1 more variable: placekey <chr>
+#> [1] "22f-224@62k-phc-qs5" "Invalid address"     "22c@62k-phc-qpv"    
+#> [4] "229@62k-phc-qxq"
 ```
 
 Alternatively, you can provide a named list. Doing so will create a new
@@ -86,26 +84,7 @@ list(
   iso_country_code = "US"
   ) %>% 
   get_placekey()
-#> $street_address
-#> [1] "1543 Mission Street, Floor 3"
-#> 
-#> $city
-#> [1] "San Francisco"
-#> 
-#> $region
-#> [1] "CA"
-#> 
-#> $postal_code
-#> [1] 94105
-#> 
-#> $iso_country_code
-#> [1] "US"
-#> 
-#> $placekey
 #> [1] "226@5vg-7gq-5mk"
-#> 
-#> attr(,"row.names")
-#> [1] 1
 ```
 
 ## Additional usage

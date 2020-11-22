@@ -5,7 +5,6 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-
 ### What is a placekey?
 
 Placekey is a special type of unique identifier that is made specifically for places data---also referred to as POI data, short for places of interest. The main utility of placekey is to provide a common join field across different POI datasets. Placekey thereby solves the challenges faced when trying to join on addresses, or location name, or both, particularly when the format of fields can be so varied.
@@ -16,14 +15,13 @@ A placekey is composed of two parts referred to as the **what** and the **where*
 
 Placekey utilizes a custom encoding based [^1] on the 28 character alphabet `23456789bcdfghjkmnpqrstvwxyz`. Each portion of a placekey relies on separate infrastructure. The **what** part of a placekey is the secret formula that they keep hidden in the Krusty Krab. The **where** is not so secret.
 
-
-The **where** portion of a placekey is created by utilizing Uber's [H3](https://github.com/uber/h3) [^2] library. In brief, H3 is a library and, more generally, method of partitioning the globe into small sections. H3 partitions the globe into a number of hexagons. The hexagons have varying sizes, or resolutions, ranging from 0 to 15. An H3 index of resolution 0 covers over 4,000,000 square kilometers whereas an index of resolution 15 covers an area of 0.0000009	square kilometers[^h3-index].
+The **where** portion of a placekey is created by utilizing Uber's [H3](https://github.com/uber/h3)[^2] library. In brief, H3 is a library and, more generally, method of partitioning the globe into small sections. H3 partitions the globe into a number of hexagons. The hexagons have varying sizes, or resolutions, ranging from 0 to 15. An H3 index of resolution 0 covers over 4,000,000 square kilometers whereas an index of resolution 15 covers an area of 0.0000009 square kilometers[^h3-index].
 
 Placekey utilizes H3 indexes with a resolution of 10 covering approximately 15 square meters each. An H3 index such as `8a2a339a02a7f80` is encoded using the placekey encoding specification to create the **where** portion of a placekey. The above H3 index corresponds to the H3 cell in which King's Dining is located. If we were to run `placekey::h3_to_placekey("8a2a339a02a7f80")` we would be returned the where portion of King's Dining's placekey.
 
 #### Example
 
-Below is an example of how a placekey can be generated and converted to and from Uber's H3 format. You will notice, though, that when you convert to an H3 index, you lose the **what** portion of the placekey. For that reason, it may be a consideration for future storage of placekeys to partition the what and where portions of the placekey for analysis. 
+Below is an example of how a placekey can be generated and converted to and from Uber's H3 format. You will notice, though, that when you convert to an H3 index, you lose the **what** portion of the placekey. For that reason, it may be a consideration for future storage of placekeys to partition the what and where portions of the placekey for analysis.
 
 ```{r}
 library(placekey)
@@ -45,24 +43,21 @@ h3_to_placekey(pk_h3)
 
 ```
 
-
 ### Benefits of Placekey
 
-The greatest benefits of placekey comes from its ability to join together place based  data sets that would otherwise have required an inordinate amount of cleaning and manipulation for joining. Second, it's a completely free service—within reasonable use, that is. Moreover, placekey's utilization of enables efficient spatial analysis without losing out on too much fine grain data. Additionally, there are bindings to the H3 library—some minor ones included in this package—which can enable very creative spatial analysis and, when paired with placekey and POI data from organizations like [SafeGraph](https://www.safegraph.com/), can be used to uncover extremely nuanced finding.
+The greatest benefits of placekey comes from its ability to join together place based data sets that would otherwise have required an inordinate amount of cleaning and manipulation for joining. Second, it's a completely free service---within reasonable use, that is. Moreover, placekey's utilization of enables efficient spatial analysis without losing out on too much fine grain data. Additionally, there are bindings to the H3 library---some minor ones included in this package---which can enable very creative spatial analysis and, when paired with placekey and POI data from organizations like [SafeGraph](https://www.safegraph.com/), can be used to uncover extremely nuanced finding.
 
-![A hexagon's neighbors from Uber](https://1fykyq3mdn5r21tpna3wkdyi-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/image22.png)
+<div align="center">
+![](https://1fykyq3mdn5r21tpna3wkdyi-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/image22.png){width=33%} ![](https://1fykyq3mdn5r21tpna3wkdyi-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/image25-1.png){width=33%}</div>
 
+### Limitations of Placekey
 
-### Limitations of Placekey 
+There are a few limitations of placekey that ought to be considered. The first is that placekey, as it exists today, works only in one direction. Meaning you can only retrieve a placekey for an address. You cannot, however, retrieve an address from a placekey. If you intend to work with placekeys, ensure that you do not uncouple the placekey from the address it belongs to. Without the respective address or POI data, the placekey is useless.
 
-There are a few limitations of placekey that ought to be considered. The first is that placekey, as it exists today, works only in one direction. Meaning you can only retrieve a placekey for an address. You cannot, however, retrieve an address from a placekey. If you intend to work with placekeys, ensure that you do not uncouple the placekey from the address it belongs to. Without the respective address or POI data, the placekey is useless. 
+Second, there is not a way for users to check for any change of addresses and the history of a single placekey. Placekeys are subject to change. However, according to a community thread, it appears that there will be utility.
 
-Second, there is not a way for users to check for any change of addresses and the history of a single placekey. Placekeys are subject to change. However, according to a community thread, it appears that there will be utility 
-
-
-
-
-.
 [^1]: [Placekey.io Encoding specification](https://uploads-ssl.webflow.com/5f08ccbb93b299154d34ef7f/5f781daba1f1a09a583a41df_Placekey%20Encoding%20Specification%20WhitePaper%20v4.pdf)
+
 [^2]: [Uber H3 Library](https://github.com/uber/h3)
+
 [^h3-index]: [Table of Cell Areas for H3 Resolutions](https://h3geo.org/docs/core-library/restable)

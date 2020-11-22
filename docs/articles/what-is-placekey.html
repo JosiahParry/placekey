@@ -6,23 +6,25 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Introduction to Placekeys • placekey</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/lumen/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to Placekeys">
+<script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<meta property="og:title" content="Introduction to Placekeys">
 <meta property="og:description" content="placekey">
+<meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-90934606-1"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-90934606-1');
-</script>
+<![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
@@ -65,7 +67,14 @@
   </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/josiahparry/placekey/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -83,7 +92,7 @@
             
             <h4 class="date">2020-11-22</h4>
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/josiahparry/placekey/blob/master/vignettes/what-is-placekey.Rmd"><code>vignettes/what-is-placekey.Rmd</code></a></small>
       <div class="hidden name"><code>what-is-placekey.Rmd</code></div>
 
     </div>
@@ -93,14 +102,14 @@
 <div id="what-is-a-placekey" class="section level3">
 <h3 class="hasAnchor">
 <a href="#what-is-a-placekey" class="anchor"></a>What is a placekey?</h3>
-<p>Placekey is nothing more than a special unique identifier that is made specifically for places data—also referred to as POI data, short for places of interest. The main utility of placekey is to provide a common join field across different POI datasets. Placekey thereby solves the challenges faced when trying to join on addresses, or location name, or both, particularly when the format of fields can be so varied.</p>
+<p>Placekey is a special type of unique identifier that is made specifically for places data—also referred to as POI data, short for places of interest. The main utility of placekey is to provide a common join field across different POI datasets. Placekey thereby solves the challenges faced when trying to join on addresses, or location name, or both, particularly when the format of fields can be so varied.</p>
 <p>A placekey is composed of two parts referred to as the <strong>what</strong> and the <strong>where</strong> and takes the format of <code>what@where</code>. The <strong>what</strong> is optional meaning that a placekey may also look like <code>@where</code>. An example of a valid placekey is <code>227-222@62k-phc-qs5</code>. This is the unique identifier for Kings Dining &amp; Entertainment Dedham, MA.</p>
 </div>
 <div id="how-does-it-work" class="section level3">
 <h3 class="hasAnchor">
 <a href="#how-does-it-work" class="anchor"></a>How does it work?</h3>
-<p>Placekey utilizes a custom encoding based [^1] on the 28 character alpabet <code>23456789bcdfghjkmnpqrstvwxyz</code>. Each portion of a placekey relies on separate infrastructure. The <strong>what</strong> part of a placekey is the secret formula that they keep hidden in the Krusty Krab. The <strong>where</strong> is not so secret.</p>
-<p>The <strong>where</strong> portion of a placekey is created by utilizing Uber’s <a href="https://github.com/uber/h3">H3</a> [^2] library. In brief, H3 is a library and, more generally, method of partitioning the globe into small sections. H3 partitions the globe into a number of hexagons. The hexagons have varying sizes, or resolutions, ranging from 0 to 15. An H3 index of resolution 0 covers over 4,000,000 square kilometers whereas an index of resolution 15 covers an area of 0.0000009 square kilometers[^h3-index].</p>
+<p>Placekey utilizes a custom encoding based <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> on the 28 character alphabet <code>23456789bcdfghjkmnpqrstvwxyz</code>. Each portion of a placekey relies on separate infrastructure. The <strong>what</strong> part of a placekey is the secret formula that they keep hidden in the Krusty Krab. The <strong>where</strong> is not so secret.</p>
+<p>The <strong>where</strong> portion of a placekey is created by utilizing Uber’s <a href="https://github.com/uber/h3">H3</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> library. In brief, H3 is a library and, more generally, method of partitioning the globe into small sections. H3 partitions the globe into a number of hexagons. The hexagons have varying sizes, or resolutions, ranging from 0 to 15. An H3 index of resolution 0 covers over 4,000,000 square kilometers whereas an index of resolution 15 covers an area of 0.0000009 square kilometers<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
 <p>Placekey utilizes H3 indexes with a resolution of 10 covering approximately 15 square meters each. An H3 index such as <code>8a2a339a02a7f80</code> is encoded using the placekey encoding specification to create the <strong>where</strong> portion of a placekey. The above H3 index corresponds to the H3 cell in which King’s Dining is located. If we were to run <code><a href="../reference/h3_to_placekey.html">placekey::h3_to_placekey("8a2a339a02a7f80")</a></code> we would be returned the where portion of King’s Dining’s placekey.</p>
 <div id="example" class="section level4">
 <h4 class="hasAnchor">
@@ -119,12 +128,8 @@
 )
 
 (<span class="no">kings_pk</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_placekey.html">get_placekey</a></span>(<span class="no">kings</span>))</pre></body></html></div>
-<pre><code>## # A tibble: 1 x 7
-##   location_name street_address city  region postal_code iso_country_code
-##   &lt;chr&gt;         &lt;chr&gt;          &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;           
-## 1 Kings Dining… 600 Legacy Pl… Dedh… Massa… 02026       US              
-## # … with 1 more variable: placekey &lt;chr&gt;</code></pre>
-<div class="sourceCode" id="cb5"><html><body><pre class="r">(<span class="no">pk_h3</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/placekey_to_h3.html">placekey_to_h3</a></span>(<span class="no">kings_pk</span>$<span class="no">placekey</span>))</pre></body></html></div>
+<pre><code>## [1] "227-222@62k-phc-qs5"</code></pre>
+<div class="sourceCode" id="cb5"><html><body><pre class="r">(<span class="no">pk_h3</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/placekey_to_h3.html">placekey_to_h3</a></span>(<span class="no">kings_pk</span>))</pre></body></html></div>
 <pre><code>## [1] "8a2a339a02a7f80"</code></pre>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu"><a href="../reference/h3_to_placekey.html">h3_to_placekey</a></span>(<span class="no">pk_h3</span>)</pre></body></html></div>
 <pre><code>## [1] "@62k-phc-qs5"</code></pre>
@@ -134,16 +139,23 @@
 <h3 class="hasAnchor">
 <a href="#benefits-of-placekey" class="anchor"></a>Benefits of Placekey</h3>
 <p>The greatest benefits of placekey comes from its ability to join together place based data sets that would otherwise have required an inordinate amount of cleaning and manipulation for joining. Second, it’s a completely free service—within reasonable use, that is. Moreover, placekey’s utilization of enables efficient spatial analysis without losing out on too much fine grain data. Additionally, there are bindings to the H3 library—some minor ones included in this package—which can enable very creative spatial analysis and, when paired with placekey and POI data from organizations like <a href="https://www.safegraph.com/">SafeGraph</a>, can be used to uncover extremely nuanced finding.</p>
-<div class="figure">
-<img src="https://1fykyq3mdn5r21tpna3wkdyi-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/image22.png" alt=""><p class="caption">A hexagon’s neighbors from Uber</p>
+<div align="center">
+<img src="https://1fykyq3mdn5r21tpna3wkdyi-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/image22.png" style="width:33.0%"><img src="https://1fykyq3mdn5r21tpna3wkdyi-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/image25-1.png" style="width:33.0%">
 </div>
 </div>
 <div id="limitations-of-placekey" class="section level3">
 <h3 class="hasAnchor">
 <a href="#limitations-of-placekey" class="anchor"></a>Limitations of Placekey</h3>
 <p>There are a few limitations of placekey that ought to be considered. The first is that placekey, as it exists today, works only in one direction. Meaning you can only retrieve a placekey for an address. You cannot, however, retrieve an address from a placekey. If you intend to work with placekeys, ensure that you do not uncouple the placekey from the address it belongs to. Without the respective address or POI data, the placekey is useless.</p>
-<p>Second, there is not a way for users to check for any change of addresses and the history of a single placekey. Placekeys are subject to change. However, according to a community thread, it appears that there will be utility</p>
-<p>. [^1]: <a href="https://uploads-ssl.webflow.com/5f08ccbb93b299154d34ef7f/5f781daba1f1a09a583a41df_Placekey%20Encoding%20Specification%20WhitePaper%20v4.pdf">Placekey.io Encoding specification</a> [^2]: <a href="https://github.com/uber/h3">Uber H3 Library</a> [^h3-index]: <a href="https://h3geo.org/docs/core-library/restable">Table of Cell Areas for H3 Resolutions</a></p>
+<p>Second, there is not a way for users to check for any change of addresses and the history of a single placekey. Placekeys are subject to change. However, according to a community thread, it appears that there will be utility.</p>
+</div>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn1"><p><a href="https://uploads-ssl.webflow.com/5f08ccbb93b299154d34ef7f/5f781daba1f1a09a583a41df_Placekey%20Encoding%20Specification%20WhitePaper%20v4.pdf">Placekey.io Encoding specification</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://github.com/uber/h3">Uber H3 Library</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://h3geo.org/docs/core-library/restable">Table of Cell Areas for H3 Resolutions</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
   </div>
 

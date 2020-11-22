@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
+
+
+/* utilize spartan font */
+body {
+  font-family: "Spartan";
+}
+
+/* modify navbar to match placekey style */
+.navbar-default {
+  background-color: black;
+}
+
+.navbar-default a {
+  color: white;
+}
+
+
+/* this gets rid of version border */
+.label-default {
+    background-color: #00000000;
+    color: #999999;
+}
+
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: #ffffff;
+    background-color: transparent;
+}

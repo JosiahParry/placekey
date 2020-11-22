@@ -3,7 +3,7 @@
 \docType{placekey}
 \name{placekey}
 \alias{placekey}
-\title{placekey: A package for computating the notorious bar statistic.}
+\title{placekey: An R client for Placekey.}
 \description{
 An R library to interact with plackeys. The package provides access to the placekey.io API, conversion between Uber's H3 index, and other general placekey actions.
 }

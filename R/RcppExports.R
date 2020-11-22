@@ -20,7 +20,7 @@ h3_string_to_int <- function(index) {
     .Call('_placekey_h3_string_to_int', PACKAGE = 'placekey', index)
 }
 
-#' Returns string format of an H3 integer representation.
+#' Returns string format of an H3 integer representation
 #' @param index as an integer representation.
 #' @export
 h3_int_to_string <- function(index) {

@@ -37,7 +37,7 @@ uint64_t h3_string_to_int(String index) {
   return input;
 }
 
-//' Returns string format of an H3 integer representation.
+//' Returns string format of an H3 integer representation
 //' @param index as an integer representation.
 //' @export
 // [[Rcpp::export]]

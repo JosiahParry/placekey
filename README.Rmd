@@ -19,6 +19,9 @@ knitr::opts_chunk$set(
 
 {placekey} is an R package to interact with the [Placekey](https://www.placekey.io/) API. 
 
+See the [Introduction to Placekeys](https://placekey.josiahparry.com/articles/what-is-placekey.html) vignette for more.
+    
+
 ## Installing
 
 Some functionality of placekey requires the utilization of the C library [H3](https://h3geo.org/) from Uber. Ensure that you have H3 installed prior to installing placekey. The instructions to install h3 can be found on the H3 [GitHub repository](https://github.com/uber/H3). If you are using macOS, I recommend installing from [Homebrew](https://brew.sh/). 

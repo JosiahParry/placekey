@@ -11,6 +11,7 @@ Authors@R: c(
 Maintainer: Josiah Parry <josiah.parry@gmail.com>
 Description: An R library to interact with plackeys. The package provides access to the placekey.io API, conversion between Uber's H3 index, and other general placekey actions. 
 License: Apache License (>= 2.0)
+URL: https://placekey.josiahparry.com, https://github.com/josiahparry/placekey
 Imports:
     stringr,
     magrittr,
