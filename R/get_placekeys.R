@@ -1,4 +1,15 @@
+#' Function for parsing bulk API responses
+#' @keywords internal
+parse_bulk_pk <- function(resp) {
+  res <- content(resp)
+
+  map_chr(res, pluck, "placekey", .default = NA_character_)
+}
+
+
 #' Get Placekeys using the bulk API
+#'
+#' Fetch placekeys using the bulk API. Automatically paginates.
 #'
 #' @inheritParams get_placekey
 #' @param longitude Longitude in decimal degrees.
@@ -10,15 +21,15 @@
 #' \dontrun{
 #' # include in a mutate statement
 #' boston_bars %>%
-#'   slice(1:100) %>%
-#'   mutate(placekey = get_placekeys(
-#'     location_name,
-#'     street_address,
-#'     city,
-#'     region,
-#'     postal_code,
-#'     iso_country_code
-#'   ))
+#'  slice(1:100) %>%
+#'  mutate(placekey = get_placekeys(
+#'    location_name,
+#'    street_address,
+#'    city,
+#'    region,
+#'    postal_code,
+#'    iso_country_code
+#'  ))
 #' }
 get_placekeys <- function(
   location_name = NA,
@@ -99,7 +110,7 @@ get_placekeys <- function(
                      body = list(queries = queries, options = options_list),
                      httr::add_headers(apikey = key), encode = "json",
                      times = 3)
-    print(content(query))
+    #print(content(query))
     # parse the bulk placekey response
     parse_bulk_pk(query)
 
@@ -109,16 +120,4 @@ get_placekeys <- function(
   unlist(resp)
 
 }
-
-
-
-#' Function for parsing bulk API responses
-#' @keywords internal
-parse_bulk_pk <- function(resp) {
-  res <- content(resp)
-
-  map_chr(res, pluck, "placekey", .default = NA_character_)
-}
-
-
 

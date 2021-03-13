@@ -5,12 +5,14 @@
 \title{Get Placekeys using the bulk API}
 \usage{
 get_placekeys(
-  location_name = NULL,
-  street_address = NULL,
-  city = NULL,
-  region = NULL,
-  postal_code = NULL,
-  iso_country_code = NULL,
+  location_name = NA,
+  street_address = NA,
+  city = NA,
+  region = NA,
+  postal_code = NA,
+  iso_country_code = NA,
+  latitude = NA,
+  longitude = NA,
   strict_address_match = FALSE,
   strict_name_match = FALSE,
   key = Sys.getenv("PLACEKEY_SECRET"),
@@ -30,16 +32,31 @@ get_placekeys(
 
 \item{iso_country_code}{The ISO 2-letter Country Code for the place. Currently may only be US.}
 
+\item{latitude}{Latitude in decimal degrees.}
+
+\item{longitude}{Longitude in decimal degrees.}
+
 \item{strict_address_match}{If set to `TRUE`, a Placekey is only returned if all fields identify the place as being at the exact address specified. If set to `FALSE`, the Placekey returned may ignore unit/apartment/floor information. Optional. Default `FALSE`.}
 
 \item{strict_name_match}{If set to `TRUE`, a Placekey is only returned if all fields identify the POI as having the exact name specified. Optional. Default `FALSE`.}
 
 \item{...}{Unused; allows \code{purrr::pmap_chr} to call \code{get_placekey} with columns not used in the Placekey call.}
-
-\item{longitude}{Longitude in decimal degrees.}
-
-\item{latitude}{Latitude in decimal degrees.}
 }
 \description{
-Get Placekeys using the bulk API
+Fetch placekeys using the bulk API. Automatically paginates.
+}
+\examples{
+\dontrun{
+# include in a mutate statement
+boston_bars \%>\%
+ slice(1:100) \%>\%
+ mutate(placekey = get_placekeys(
+   location_name,
+   street_address,
+   city,
+   region,
+   postal_code,
+   iso_country_code
+ ))
+}
 }
