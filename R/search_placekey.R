@@ -21,7 +21,7 @@ search_placekey <- function(placekey, key = Sys.getenv("SAFEGRAPH_SECRET")) {
                   httr::add_headers(apikey = Sys.getenv("SAFEGRAPH_SECRET")),
                   encode = "json")
 
-  res <- httr::content(q, as = "text") %>%
+  res <- httr::content(q, as = "text", encoding = "utf-8") %>%
     jsonlite::fromJSON()
 
   if (!is.null(purrr::pluck(res, "errors"))) {
@@ -54,7 +54,7 @@ construct_sg_query <- function(placekeys) {
 }'
 
   pks <- glue::glue('"{placekeys}"') %>%
-    glue_collapse(sep = ", ")
+    glue::glue_collapse(sep = ", ")
 
 
   glue::glue_data(c("pks" = paste0("[", pks, "]")), glue_skeleton, .open = "[", .close = "]")
