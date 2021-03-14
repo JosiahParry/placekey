@@ -23,8 +23,7 @@ If you do not have homebrew installed, go to [brew.sh](https://brew.sh)
 and follow the installation instructions. Open up spotlight search and
 open up the terminal application. Run `brew --version` to see if you
 have Homebrew installed. If that command doesn’t return anything un
-`/bin/bash -c "$(curl -fsSL
-https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 to install Homebrew. Then use Homebrew to install H3.
 
 ``` terminal
@@ -48,7 +47,7 @@ arguments `street_address`, `city`, `region`, `postal_code`, and
 
 ``` r
 library(placekey)
-library(magrittr)
+library(dplyr)
 
 get_placekey(
   street_address = "1543 Mission Street, Floor 3",
@@ -67,7 +66,7 @@ the placekey.
 
 ``` r
 get_placekey(placekey::boston_bars[2:5,])
-#> [1] "22f-224@62k-phc-qs5" "Invalid address"     "22c@62k-phc-qpv"    
+#> [1] "22f-224@62k-phc-qs5" "22j@62k-phc-qs5"     "22c@62k-phc-qpv"    
 #> [4] "229@62k-phc-qxq"
 ```
 
@@ -85,6 +84,25 @@ list(
   ) %>% 
   get_placekey()
 #> [1] "226@5vg-7gq-5mk"
+```
+
+## Get location info from a Placekey
+
+SafeGraph has released a [Beta Places
+API](https://docs.safegraph.com/reference). This gives us the ability to
+provide up to 100 placekeys and return their location information. Sign
+up for an API key on SafeGraph’s
+[website](https://shop.safegraph.com/api/).
+
+``` r
+bars <- c("22f-224@62k-phc-qs5", "zzw-222@62k-phc-qj9")
+
+search_placekey(bars)
+#> # A tibble: 2 x 6
+#>   location_name  street_address city   region iso_country_code placekey         
+#>   <chr>          <chr>          <chr>  <chr>  <chr>            <chr>            
+#> 1 Studio 3       670 Legacy Pl  Dedham MA     US               22f-224@62k-phc-…
+#> 2 Victory Grille 233 Elm St     Dedham MA     US               zzw-222@62k-phc-…
 ```
 
 ## Additional usage
@@ -130,4 +148,4 @@ The spatial capabilities are supported by H3 are limited as the two
 packages to interact with H3, `h3r` and `h3`, are not released on CRAN.
 This package adapts and limits Scott Jackson’s `h3r` package
 (<https://github.com/scottmmjackson/h3r>). Without his concise code,
-this package couldn’t exist. Thank you Scott\!
+this package couldn’t exist. Thank you Scott!

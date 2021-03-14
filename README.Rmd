@@ -2,8 +2,6 @@
 output: github_document
 ---
 
-
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
@@ -45,7 +43,7 @@ To get the placekey for a place of interest (POI) you will use the `get_placekey
 
 ```{r message=FALSE, warning=FALSE}
 library(placekey)
-library(magrittr)
+library(dplyr)
 
 get_placekey(
   street_address = "1543 Mission Street, Floor 3",
@@ -57,7 +55,6 @@ get_placekey(
 ```
 
 Alternatively, you can pass in a dataframe with column names that match required arguments. The built in dataset `boston_bars` is formatted as such. This method adds a new column to the provided dataframe containing the placekey. 
-
 ```{r}
 get_placekey(placekey::boston_bars[2:5,])
 ```
@@ -75,6 +72,19 @@ list(
   ) %>% 
   get_placekey()
 ```
+
+
+## Get location info from a Placekey
+
+SafeGraph has released a [Beta Places API](https://docs.safegraph.com/reference). This gives us the ability to provide up to 100 placekeys and return their location information. Sign up for an API key on SafeGraph's [website](https://shop.safegraph.com/api/).
+
+```{r}
+
+bars <- c("22f-224@62k-phc-qs5", "zzw-222@62k-phc-qj9")
+
+search_placekey(bars)
+```
+
 
 ## Additional usage
 
