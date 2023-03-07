@@ -1,8 +1,8 @@
 #' Fetch place attributes by placekey
 #'
 #' Use the SafeGraph [Places API](https://docs.safegraph.com/reference#places-api) to fetch POI attributes for a given placekey.
-#' @placekey A vector of placekeys. Must not exceed 100 values.
-#' @key Your SafeGraph API key. Recommend to be stored as an environment variable called `SAFEKEY_SECRET`.
+#' @param placekey A vector of placekeys. Must not exceed 100 values.
+#' @param key Your SafeGraph API key. Recommend to be stored as an environment variable called `SAFEKEY_SECRET`.
 #'
 #' @details The SafeGraph places API will only return up to 4000 rows. This utilize your $200 credit. Each subsequent placekey will cost $0.05. You will not be charged if you have not set up payment.
 #'

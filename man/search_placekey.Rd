@@ -6,6 +6,11 @@
 \usage{
 search_placekey(placekey, key = Sys.getenv("SAFEGRAPH_SECRET"))
 }
+\arguments{
+\item{placekey}{A vector of placekeys. Must not exceed 100 values.}
+
+\item{key}{Your SafeGraph API key. Recommend to be stored as an environment variable called `SAFEKEY_SECRET`.}
+}
 \description{
 Use the SafeGraph [Places API](https://docs.safegraph.com/reference#places-api) to fetch POI attributes for a given placekey.
 }
